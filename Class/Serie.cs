@@ -1,4 +1,4 @@
-namespace DIO.Series.Class
+namespace DIO.Series
 {
     public class Serie
     {
