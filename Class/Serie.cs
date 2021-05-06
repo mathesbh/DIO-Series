@@ -23,5 +23,9 @@ namespace DIO.Series
             details += "Year: " + this.Year + "\n";
             return details;
         }
+        public string getTitle()
+        {
+            return this.Title;
+        }
     }
 }
