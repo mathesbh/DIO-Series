@@ -27,5 +27,9 @@ namespace DIO.Series
         {
             return this.Title;
         }
+        public int getId()
+        {
+            return this.Id;
+        }
     }
 }
