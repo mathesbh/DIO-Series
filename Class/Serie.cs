@@ -14,5 +14,14 @@ namespace DIO.Series
             this.Description = description;
             this.Year = year;
         }
+        public string Details()
+        {
+            string details = "" ;
+            details += "Genre: " + this.Genres + "\n";
+            details += "Title: " + this.Title + "\n";
+            details += "Description: " + this.Description + "\n";
+            details += "Year: " + this.Year + "\n";
+            return details;
+        }
     }
 }
