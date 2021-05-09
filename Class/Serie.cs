@@ -6,13 +6,15 @@ namespace DIO.Series
         private string Title { get; set; }
         private string Description { get; set; }
         private int Year { get; set; }
-        public Serie(int id, Genres genres, string title, string description, int year)
+        private bool Delete { get; set; }
+        public Serie(int id, Genres genres, string title, string description, int year, bool delete)
         {
             this.Id = id;
             this.Genres = genres;
             this.Title = title;
             this.Description = description;
             this.Year = year;
+            this.Delete = false;
         }
         public string Details()
         {
@@ -30,6 +32,10 @@ namespace DIO.Series
         public int getId()
         {
             return this.Id;
+        }
+        public void setDelete()
+        {
+            this.Delete = true;
         }
     }
 }

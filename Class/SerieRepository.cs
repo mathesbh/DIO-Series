@@ -8,7 +8,7 @@ namespace DIO.Series
     private List<Serie> listSeries = new List<Serie>();
     public void Delete(int id)
     {
-      throw new System.NotImplementedException();
+      listSeries[id].setDelete();
     }
 
     public List<Serie> FindAll()
