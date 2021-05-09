@@ -33,7 +33,7 @@ namespace DIO.Series
 
     public void Update(int id, Serie entity)
     {
-      throw new System.NotImplementedException();
+      listSeries[id] = entity;
     }
   }
 }
