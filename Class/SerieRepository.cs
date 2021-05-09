@@ -28,7 +28,7 @@ namespace DIO.Series
 
     public void Save(Serie entity)
     {
-      throw new System.NotImplementedException();
+      listSeries.Add(entity);
     }
 
     public void Update(int id, Serie entity)
