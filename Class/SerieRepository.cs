@@ -18,7 +18,7 @@ namespace DIO.Series
 
     public Serie FindById(int id)
     {
-      throw new System.NotImplementedException();
+      return listSeries[id];
     }
 
     public int NextId()
