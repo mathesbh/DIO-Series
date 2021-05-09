@@ -23,7 +23,7 @@ namespace DIO.Series
 
     public int NextId()
     {
-      throw new System.NotImplementedException();
+      return listSeries.Count;
     }
 
     public void Save(Serie entity)
