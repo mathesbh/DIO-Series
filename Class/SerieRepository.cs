@@ -13,7 +13,7 @@ namespace DIO.Series
 
     public List<Serie> FindAll()
     {
-      throw new System.NotImplementedException();
+      return listSeries;
     }
 
     public Serie FindById(int id)
