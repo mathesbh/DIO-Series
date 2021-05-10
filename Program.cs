@@ -55,12 +55,49 @@ namespace DIO.Series
 
     private static void InsertSerie()
     {
-      throw new NotImplementedException();
+      Console.WriteLine("2- To insert new serie");
+
+      foreach (int item in Enum.GetValues(typeof(Genres)))
+      {
+          Console.WriteLine("{0}-{1}", item, Enum.GetName(typeof(Genres), item));
+      }
+
+      Console.Write("Choose a genre referring to the items above: ");
+      int genre = int.Parse(Console.ReadLine());
+
+      Console.Write("Type the title of the series: ");
+      string title = Console.ReadLine();
+
+      Console.Write("Type the release year of the serie: ");
+      int year = int.Parse(Console.ReadLine());
+
+      Console.Write("Type the description of the serie: ");
+      string description = Console.ReadLine();
+
+      Serie newSerie = new Serie(id: repository.NextId(), genres: (Genres)genre, title: title, year: year, description: description);
+
+      repository.Save(newSerie);    
     }
 
     private static void ListSeries()
     {
-      throw new NotImplementedException();
+      Console.WriteLine("1- To list series");
+
+      var list = repository.FindAll();
+
+      if(list.Count == 0)
+      {
+          Console.WriteLine("No series registered");
+          return;
+      }
+
+      foreach (var item in list)
+      {
+          var delete = item.ReturnDelete();
+        
+        Console.WriteLine("#ID {0}: - {1} {2}", item.getId(), item.getTitle(), (delete ? "*Delete*" : ""));
+      }
+
     }
 
     private static string UserMenu()
