@@ -45,7 +45,11 @@ namespace DIO.Series
 
     private static void DeleteSerie()
     {
-      throw new NotImplementedException();
+      Console.WriteLine("4- Delete serie");
+
+      Console.WriteLine("Type the Id of the serie: ");
+      int id = int.Parse(Console.ReadLine());
+      repository.Delete(id);
     }
 
     private static void UpdateSerie()
