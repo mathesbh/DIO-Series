@@ -40,7 +40,13 @@ namespace DIO.Series
 
     private static void ShowSerie()
     {
-      throw new NotImplementedException();
+      Console.WriteLine("5- Show serie");
+      
+      int id = int.Parse(Console.ReadLine());
+
+      var serie = repository.FindById(id);
+
+      Console.WriteLine(serie.Details());
     }
 
     private static void DeleteSerie()
