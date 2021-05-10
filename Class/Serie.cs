@@ -7,7 +7,7 @@ namespace DIO.Series
         private string Description { get; set; }
         private int Year { get; set; }
         private bool Delete { get; set; }
-        public Serie(int id, Genres genres, string title, string description, int year, bool delete)
+        public Serie(int id, Genres genres, string title, string description, int year)
         {
             this.Id = id;
             this.Genres = genres;
@@ -23,6 +23,7 @@ namespace DIO.Series
             details += "Title: " + this.Title + "\n";
             details += "Description: " + this.Description + "\n";
             details += "Year: " + this.Year + "\n";
+            details += "Delete: " + this.Delete;
             return details;
         }
         public string getTitle()
@@ -33,8 +34,11 @@ namespace DIO.Series
         {
             return this.Id;
         }
-        public void setDelete()
+        public bool ReturnDelete()
         {
+            return this.Delete;
+        }
+        public void setDelete(){
             this.Delete = true;
         }
     }
