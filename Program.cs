@@ -60,7 +60,31 @@ namespace DIO.Series
 
     private static void UpdateSerie()
     {
-      throw new NotImplementedException();
+      Console.WriteLine("3- To update serie");
+
+      Console.WriteLine("Type the Id of the serie: ");
+      int id = int.Parse(Console.ReadLine());
+
+      foreach (int item in Enum.GetValues(typeof(Genres)))
+      {
+          Console.WriteLine("{0}-{1}", item, Enum.GetName(typeof(Genres), item));
+      }
+
+      Console.Write("Choose a genre referring to the items above: ");
+      int genre = int.Parse(Console.ReadLine());
+
+      Console.Write("Type the title of the series: ");
+      string title = Console.ReadLine();
+
+      Console.Write("Type the release year of the serie: ");
+      int year = int.Parse(Console.ReadLine());
+
+      Console.Write("Type the description of the serie: ");
+      string description = Console.ReadLine();
+
+      Serie updateSerie = new Serie(id: repository.NextId(), genres: (Genres)genre, title: title, year: year, description: description); 
+
+      repository.Update(id, updateSerie);      
     }
 
     private static void InsertSerie()
